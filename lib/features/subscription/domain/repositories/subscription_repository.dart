@@ -4,7 +4,7 @@ import '../../../../core/error/failures.dart';
 import '../entities/subscription_entity.dart';
 
 abstract class SubscriptionRepository {
-  Future<Either<Failure, List<SubscriptionEntity>>> getSubscriptionPlans();
-
-  Future<Either<Failure, bool>> subscribeToPlan(String subscriptionId);
+  Future<Either<Failure, SubscriptionEntity>> getSubscriptionService();
+ 
+  Future<Either<Failure, bool>> subscribeToPlan(String planId);
 }

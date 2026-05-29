@@ -5,10 +5,10 @@ import '../../../../core/error/failures.dart';
 import '../../../../core/usecase/usecase.dart';
 import '../repositories/subscription_repository.dart';
 
-class SubscribeToPlan implements UseCase<bool, SubscribeParams> {
+class SubscribeToPlanUsecase implements UseCase<bool, SubscribeParams> {
   final SubscriptionRepository repository;
 
-  SubscribeToPlan(this.repository);
+  SubscribeToPlanUsecase(this.repository);
 
   @override
   Future<Either<Failure, bool>> call(SubscribeParams params) async {

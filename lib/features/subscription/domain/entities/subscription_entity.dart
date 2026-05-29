@@ -1,52 +1,20 @@
 import 'package:equatable/equatable.dart';
 
+import 'subscription_plan_entity.dart';
+
 class SubscriptionEntity extends Equatable {
-  final String id;
-  final String title;
-  final String priceDetail;
-  final String pricePerWeek;
+  final String name;
+  final String description;
   final List<String> benefits;
-  final String? trialPeriod;
-  final bool isSelected;
+  final List<SubscriptionPlanEntity> plans;
 
   const SubscriptionEntity({
-    required this.id,
-    required this.title,
-    required this.priceDetail,
-    required this.pricePerWeek,
+    required this.name,
+    required this.description,
     required this.benefits,
-    this.trialPeriod,
-    this.isSelected = false,
+    required this.plans,
   });
 
-  SubscriptionEntity copyWith({
-    String? id,
-    String? title,
-    String? priceDetail,
-    String? pricePerWeek,
-    List<String>? benefits,
-    String? trialPeriod,
-    bool? isSelected,
-  }) {
-    return SubscriptionEntity(
-      id: id ?? this.id,
-      title: title ?? this.title,
-      priceDetail: priceDetail ?? this.priceDetail,
-      pricePerWeek: pricePerWeek ?? this.pricePerWeek,
-      benefits: benefits ?? this.benefits,
-      trialPeriod: trialPeriod ?? this.trialPeriod,
-      isSelected: isSelected ?? this.isSelected,
-    );
-  }
-
   @override
-  List<Object?> get props => [
-    id,
-    title,
-    priceDetail,
-    pricePerWeek,
-    benefits,
-    trialPeriod,
-    isSelected,
-  ];
+  List<Object?> get props => [name, description, benefits, plans];
 }
